@@ -128,7 +128,7 @@ int NextArg(const wchar_t** asCmdLine, CmdArg &rsArg, const wchar_t** rsArgStart
 	}
 	else
 	{
-		_ASSERTE(FALSE && "rsArgs was not resetted before new cycle!");
+		_ASSERTE(FALSE && "rsArgs was not reset before new cycle!");
 	}
 	#endif
 
