@@ -2495,7 +2495,7 @@ DWORD CRealConsole::MonitorThreadWorker(bool bDetached, bool& rbChildProcessCrea
 			{
 				if (!IsWindow(hConWnd))
 				{
-					_ASSERTE(FALSE && "Console window was abnormally terminated?");
+					//_ASSERTE(FALSE && "Console window was abnormally terminated?");
 					nWait = IDEVENT_SERVERPH;
 					break;
 				}

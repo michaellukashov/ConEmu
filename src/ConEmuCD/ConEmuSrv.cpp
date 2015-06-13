@@ -2461,7 +2461,7 @@ bool TryConnect2Gui(HWND hGui, DWORD anGuiPID, CESERVER_REQ* pIn)
 			if (!IsDebuggerPresent())
 			{
 				//_ASSERTE(gpSrv->ConnectInfo.nDelta <= EXECUTE_CMD_WARN_TIMEOUT || (pIn->hdr.nCmd == CECMD_CMDSTARTSTOP && nDelta <= EXECUTE_CMD_WARN_TIMEOUT2));
-				_ASSERTEX(gpSrv->ConnectInfo.nDelta <= EXECUTE_CMD_WARN_TIMEOUT);
+				//_ASSERTEX(gpSrv->ConnectInfo.nDelta <= EXECUTE_CMD_WARN_TIMEOUT);
 			}
 		}
 		#endif

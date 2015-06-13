@@ -725,7 +725,7 @@ CESERVER_REQ* ExecuteGuiCmd(HWND hConWnd, CESERVER_REQ* pIn, HWND hOwner, BOOL b
 		{
 			if (lpRet)
 			{
-				_ASSERTE(nDelta <= EXECUTE_CMD_WARN_TIMEOUT || lpRet->hdr.IsDebugging || (pIn->hdr.nCmd == CECMD_CMDSTARTSTOP && nDelta <= EXECUTE_CMD_WARN_TIMEOUT2));
+				//_ASSERTE(nDelta <= EXECUTE_CMD_WARN_TIMEOUT || lpRet->hdr.IsDebugging || (pIn->hdr.nCmd == CECMD_CMDSTARTSTOP && nDelta <= EXECUTE_CMD_WARN_TIMEOUT2));
 			}
 			else
 			{

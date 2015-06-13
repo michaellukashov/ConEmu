@@ -2960,7 +2960,7 @@ bool UnsetHookInt(HMODULE Module)
 						if (!bWarned)
 						{
 							bWarned = true;
-							_ASSERTE(FALSE && "Unknown function replacement was found (external hook?)");
+							//_ASSERTE(FALSE && "Unknown function replacement was found (external hook?)");
 						}
 						#endif
 

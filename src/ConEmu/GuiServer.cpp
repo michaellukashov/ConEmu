@@ -457,7 +457,7 @@ BOOL CGuiServer::GuiServerCommand(LPVOID pInst, CESERVER_REQ* pIn, CESERVER_REQ*
 					if (!IsDebuggerPresent())
 					{
 						//_ASSERTE(nDelta <= EXECUTE_CMD_WARN_TIMEOUT || (pIn->hdr.nCmd == CECMD_CMDSTARTSTOP && nDelta <= EXECUTE_CMD_WARN_TIMEOUT2));
-						_ASSERTEX(nDelta <= EXECUTE_CMD_WARN_TIMEOUT);
+						//_ASSERTEX(nDelta <= EXECUTE_CMD_WARN_TIMEOUT);
 					}
 				}
 				#endif
