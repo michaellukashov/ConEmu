@@ -3159,7 +3159,10 @@ wrap: // Wrap to here, because gp_VActive may be invalid already and we need to 
 	// Теперь перетряхнуть заголовок (табы могут быть отключены и в заголовке отображается количество консолей)
 	gpConEmu->UpdateTitle(); // сам перечитает
 	//
-	gpConEmu->mp_TabBar->Update(); // Иначе не будет обновлены закладки
+	if (gp_VActive)
+	{
+		gpConEmu->mp_TabBar->Update(); // Иначе не будет обновлены закладки
+	}
 	// А теперь можно обновить активную закладку
 	int nActiveConNum = gpConEmu->ActiveConNum();
 	gpConEmu->mp_TabBar->OnConsoleActivated(nActiveConNum/*, FALSE*/);
