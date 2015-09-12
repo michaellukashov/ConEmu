@@ -39,9 +39,34 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #define _ARRAY_ASSERTE(x)
 
+#if defined(_MSC_VER) && (_MSC_VER >= 1600)
+
+template <typename T> class is_pod
+{
+	struct my_special_type { };
+public:
+	typedef char Yes;
+	typedef struct {char a[2];} No;
+
+	template <typename C> static Yes test(my_special_type)
+	{
+		union {T validPodType;} u;
+	}
+
+	template <typename C> static No test(...)
+	{
+	}
+	enum {value = (sizeof(test<T>(my_special_type())) == sizeof(Yes))};
+};
+
+#endif
+
 template<typename _Ty>
 class MArray
 {
+#if defined(_MSC_VER) && (_MSC_VER >= 1600)
+	static_assert(is_pod<_Ty>::value, "Must be POD type");
+#endif
 	protected:
 		INT_PTR mn_TySize;
 		INT_PTR mn_Elements;
