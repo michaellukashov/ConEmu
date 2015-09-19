@@ -13373,7 +13373,7 @@ LRESULT CConEmuMain::WndProc(HWND hWnd, UINT messg, WPARAM wParam, LPARAM lParam
 			}
 			else if (messg == this->mn_MsgUpdateTabs)
 			{
-				this->mn_ReqMsgUpdateTabs = 0;
+				InterlockedExchange(&this->mn_ReqMsgUpdateTabs, 0);
 				DEBUGSTRTABS(L"OnUpdateTabs\n");
 				this->mp_TabBar->Update(TRUE);
 				return 0;
