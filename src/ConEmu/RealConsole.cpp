@@ -3025,7 +3025,7 @@ DWORD CRealConsole::MonitorThreadWorker(bool bDetached, bool& rbChildProcessCrea
 				//if ((HWND)mp_ConsoleInfo->hConWnd && mp_ConsoleInfo->nCurDataMapIdx
 				//	&& mp_ConsoleInfo->nPacketId
 				//	&& mn_LastConsolePacketIdx != mp_ConsoleInfo->nPacketId)
-				WARNING("!!! Если ожидание m_ConDataChanged будет перенесно выше - то тут нужно пользовать полученное выше значение !!!");
+				WARNING("!!! Если ожидание m_ConDataChanged будет перенесено выше - то тут нужно пользовать полученное выше значение !!!");
 
 				if (!m_ConDataChanged.Wait(0,TRUE))
 				{
