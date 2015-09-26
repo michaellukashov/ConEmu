@@ -63,7 +63,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 class CLogFunction
 {
 protected:
-	static int m_FnLevel; // without per-thread devision
+	static int m_FnLevel; // without per-thread division
 	bool mb_Logged;
 public:
 	CLogFunction();
