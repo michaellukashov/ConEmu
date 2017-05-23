@@ -3397,7 +3397,7 @@ int ParseCommandLine(LPCWSTR asCmdLine)
 					// Issue 998: Need to wait, while real console will appear
 					// gpSrv->hRootProcess еще не открыт
 					HANDLE hProcess = OpenProcess(SYNCHRONIZE, FALSE, gpSrv->dwRootProcess);
-					while (hProcess)
+					if (hProcess)
 					{
 						DWORD nConPid = 0;
 						HWND hNewCon = FindWindowEx(NULL, NULL, RealConsoleClass, NULL);
