@@ -2242,8 +2242,8 @@ bool CConEmuUpdate::wininet::Init(CConEmuUpdate* apUpd)
 
 	pUpd = apUpd;
 
-	pszLib = lstrmerge(gpConEmu->ms_ConEmuBaseDir, WIN3264TEST(L"\\ConEmuCD.dll",L"\\ConEmuCD64.dll"));
-	lhDll = pszLib ? LoadLibrary(pszLib) : NULL;
+	bRc = lstrmerge(&pszLib, gpConEmu->ms_ConEmuBaseDir, WIN3264TEST(L"\\ConEmuCD.dll",L"\\ConEmuCD64.dll"));
+	lhDll = bRc ? LoadLibrary(pszLib) : NULL;
 	if (!lhDll)
 	{
 		_ASSERTE(lhDll!=NULL);
