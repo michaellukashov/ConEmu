@@ -2584,7 +2584,7 @@ bool TryConnect2Gui(HWND hGui, DWORD anGuiPID, CESERVER_REQ* pIn)
 	}
 
 	// Этот блок if-else нужно вынести в отдельную функцию инициализации сервера (для аттача и обычный)
-	pStartStopRet = (pOut->DataSize() >= sizeof(CESERVER_REQ_SRVSTARTSTOPRET)) ? &pOut->SrvStartStopRet : NULL;
+	pStartStopRet = (pOut && (pOut->DataSize() >= sizeof(CESERVER_REQ_SRVSTARTSTOPRET))) ? &pOut->SrvStartStopRet : NULL;
 
 	if (!pStartStopRet || !pStartStopRet->Info.hWnd || !pStartStopRet->Info.hWndDc || !pStartStopRet->Info.hWndBack)
 	{
